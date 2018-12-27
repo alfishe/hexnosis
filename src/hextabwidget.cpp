@@ -180,10 +180,10 @@ bool HexTabWidget::chooseFile()
     {
         return false;
     }
-    if (not(filename.isEmpty()))
+    if (!(filename.isEmpty()))
     {
         file = new QFile(filename);
-        if (not(file->open(QIODevice::ReadOnly)))
+        if (!(file->open(QIODevice::ReadOnly)))
         {
             QMessageBox::critical(this, tr("Error"), tr("Could not open file"));
             return false;

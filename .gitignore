@@ -26,3 +26,5 @@ build-*
 *.pro.user
 Makefile
 *.moc
+build/*
+

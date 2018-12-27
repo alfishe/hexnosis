@@ -96,7 +96,7 @@ void HexnosisWindow::currentTabChanged(int index)
     {
         enableActions(true);
         TabPanel *tabpanel = qobject_cast<TabPanel *>(tab->currentWidget());
-        if (not(tabpanel->model()->hasFile()))
+        if (!(tabpanel->model()->hasFile()))
         {
             ui->actionSave->setEnabled(false);
         }
@@ -157,23 +157,23 @@ void HexnosisWindow::findWorkingTheme()
 void HexnosisWindow::setIconFallbacks()
 {
 // TODO(txwikinger): Needs rework for DRY
-    if (not(QIcon::hasThemeIcon("document-close")))
+    if (!(QIcon::hasThemeIcon("document-close")))
     {
         ui->actionClose->setIcon(this->style()->standardIcon(QStyle::SP_DialogCloseButton));
     }
-    if (not(QIcon::hasThemeIcon("document-open")))
+    if (!(QIcon::hasThemeIcon("document-open")))
     {
         ui->actionOpen->setIcon(this->style()->standardIcon(QStyle::SP_DialogOpenButton));
     }
-    if (not(QIcon::hasThemeIcon("document-save")))
+    if (!(QIcon::hasThemeIcon("document-save")))
     {
         ui->actionOpen->setIcon(this->style()->standardIcon(QStyle::SP_DialogSaveButton));
     }
-    if (not(QIcon::hasThemeIcon("document-save-as")))
+    if (!(QIcon::hasThemeIcon("document-save-as")))
     {
         ui->actionOpen->setIcon(this->style()->standardIcon(QStyle::SP_DialogSaveButton));
     }
-    if (not(QIcon::hasThemeIcon("document-new")))
+    if (!(QIcon::hasThemeIcon("document-new")))
     {
         ui->actionNew->setIcon(this->style()->standardIcon(QStyle::SP_FileDialogStart));
     }
@@ -493,13 +493,13 @@ void HexnosisWindow::on_actionCharDisplay_toggled(bool state)
  */
 void HexnosisWindow::on_editableCheckBox_toggled(bool checked)
 {
-    ui->binaryEditor->setReadOnly(not(checked));
-    ui->int8Editor->setReadOnly(not(checked));
-    ui->int16Editor->setReadOnly(not(checked));
-    ui->int32Editor->setReadOnly(not(checked));
-    ui->int64Editor->setReadOnly(not(checked));
-    ui->floatEditor->setReadOnly(not(checked));
-    ui->doubleEditor->setReadOnly(not(checked));
+    ui->binaryEditor->setReadOnly(!(checked));
+    ui->int8Editor->setReadOnly(!(checked));
+    ui->int16Editor->setReadOnly(!(checked));
+    ui->int32Editor->setReadOnly(!(checked));
+    ui->int64Editor->setReadOnly(!(checked));
+    ui->floatEditor->setReadOnly(!(checked));
+    ui->doubleEditor->setReadOnly(!(checked));
 }
 
 /**
@@ -541,7 +541,7 @@ void HexnosisWindow::on_int16Editor_editingFinished()
     short value = ui->int16Editor->text().toShort(&ok);
     // need to use void* in order to allow both short and ushort being possible
     void *p = &value;
-    if (not(ok))
+    if (!(ok))
     {
         ushort value = ui->int16Editor->text().toUShort(&ok);
         p = &value;
@@ -562,7 +562,7 @@ void HexnosisWindow::on_int32Editor_editingFinished()
     int value = ui->int32Editor->text().toInt(&ok);
     // need to use void* in order to allow both int and uint being possible
     void *p = &value;
-    if (not(ok))
+    if (!(ok))
     {
         uint value = ui->int32Editor->text().toUInt(&ok);
         p = &value;

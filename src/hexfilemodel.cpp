@@ -79,7 +79,7 @@ int HexFileModel::columnCount(const QModelIndex &index) const
  */
 QVariant HexFileModel::data(const QModelIndex &index, int role) const
 {
-    if (not(index.isValid()) || (role != Qt::DisplayRole && role != Qt::EditRole))
+    if (!(index.isValid()) || (role != Qt::DisplayRole && role != Qt::EditRole))
     {
         return QVariant();
     }
@@ -104,7 +104,7 @@ QVariant HexFileModel::data(const QModelIndex &index, int role) const
  */
 QByteArray HexFileModel::data(int length, const QModelIndex &index, int role) const
 {
-    if (not(index.isValid()) || (role != Qt::DisplayRole))
+    if (!(index.isValid()) || (role != Qt::DisplayRole))
     {
         return QByteArray();
     }
@@ -187,7 +187,7 @@ bool HexFileModel::setData(const QModelIndex &index, const QByteArray &values, i
  */
 Qt::ItemFlags HexFileModel::flags(const QModelIndex &index) const
 {
-    if (not(index.isValid()))
+    if (!(index.isValid()))
     {
         return Qt::ItemIsEnabled;
     }
@@ -278,7 +278,7 @@ bool HexFileModel::saveDatatoFile(QString file_name, int length, int offset)
     Q_UNUSED(length);
     Q_UNUSED(offset);
 
-    if (not(file_name.isEmpty()))
+    if (!(file_name.isEmpty()))
     {
         file = new QFile(file_name);
 

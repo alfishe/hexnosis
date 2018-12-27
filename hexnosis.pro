@@ -10,8 +10,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-SUBDIRS += src \
-    test/lib/QxUtilTest
+SUBDIRS += src
 TEMPLATE = subdirs
 
 CONFIG(release, debug|release) {
